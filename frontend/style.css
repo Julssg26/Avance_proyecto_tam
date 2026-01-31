@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; /* Gris muy claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #003366; /* Azul Tenaris/Tamsa */
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #002244;
+}
+
+.error-msg {
+    color: red;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.dashboard-body {
+    display: block;
+    background-color: #e9ecef;
+}
+
+.navbar {
+    background-color: #003366;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* MEJORA: Centrar el contenedor del dashboard y mejorar el flujo */
+.dashboard-container {
+    padding: 40px 20px;
+    display: flex; /* Cambiamos grid por flex para mejor control de centrado */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el bloque completo en la pantalla */
+}
+
+/* MEJORA: Tarjetas más definidas y centradas */
+.form-section {
+    width: 100%;
+    max-width: 600px; /* El formulario no necesita ser tan ancho */
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.table-section {
+    width: 100%; /* La tabla sí aprovecha el ancho */
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Estilos para que los inputs se vean ordenados */
+#movimientoForm input, 
+#movimientoForm select, 
+#movimientoForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    display: block;
+}
+
+#movimientoForm textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* MEJORA: Botones de acción en la tabla */
+.btn-accion {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-accion:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px);
+}
+
+/* Asegurar que la tabla sea legible */
+th { 
+    background-color: #003366; 
+    color: white; 
+    font-weight: 600;
+}
+
+#tablaMovimientos td {
+    vertical-align: middle;
+}
+
+/* Estilo para el botón de cerrar sesión en la navbar */
+#btnCerrarSesion {
+    width: auto;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 14px;
+}
+
+#btnCerrarSesion:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* MEJORA: Diseño de la tabla profesional */
+#tablaMovimientos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: auto; /* Permite que las columnas se ajusten al contenido */
+}
+
+#tablaMovimientos th {
+    background-color: #003366; /* Azul Tamsa */
+    color: white;
+    padding: 15px 10px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+#tablaMovimientos td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    vertical-align: middle;
+}
+
+/* Espaciado específico para columnas */
+#tablaMovimientos td:nth-child(1) { width: 15%; } /* Unidad */
+#tablaMovimientos td:nth-child(2) { width: 20%; } /* Chofer */
+#tablaMovimientos td:nth-child(3) { width: 25%; } /* Ubicación */
+#tablaMovimientos td:nth-child(4) { width: 25%; } /* Fecha/Hora */
+#tablaMovimientos td:nth-child(5) { width: 15%; text-align: center; } /* Acciones */
+
+/* MEJORA: Botones de Acción */
+.btn-accion {
+    display: inline-block;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-accion:hover {
+    background: #e2e6ea;
+    transform: scale(1.1);
+}

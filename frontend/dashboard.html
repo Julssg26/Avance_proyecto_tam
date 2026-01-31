@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Logística - Tamsa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar">
+        <h1>Centro Industrial Tamsa</h1>
+        <button id="btnCerrarSesion">Cerrar Sesión</button>
+    </nav>
+
+    <div class="dashboard-container">
+        <section class="form-section">
+            <h3>Registrar Movimiento de Unidad</h3>
+            <form id="movimientoForm">
+                <input type="text" id="unidad" placeholder="ID Unidad (ej: T-105)" required>
+                <input type="text" id="plana" placeholder="Placa Plana (ej: PL-882)">
+                <input type="text" id="chofer" placeholder="Nombre del Chofer" required>
+                <select id="ubicacion">
+                    <option value="" disabled selected>Seleccione Ubicación</option>
+                    <option value="Patio de Carga">Patio de Carga</option>
+                    <option value="Almacén Tubos">Almacén Tubos</option>
+                    <option value="Salida Principal">Salida Principal</option>
+                    <option value="Aduana Interna">Aduana Interna</option>
+                </select>
+                <textarea id="observaciones" placeholder="Observaciones de la operación (opcional)"></textarea>
+                <button type="submit" id="btnGuardar">Guardar Registro</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h3>Historial de Logística en Tiempo Real</h3>
+            <div class="table-container" style="overflow-x: auto;">
+                <table id="tablaMovimientos">
+                    <thead>
+                        <tr>
+                            <th>Unidad</th>
+                            <th>Chofer</th>
+                            <th>Ubicación</th>
+                            <th>Fecha/Hora</th>
+                            <th style="text-align: center;">Acciones</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
