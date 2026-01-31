@@ -1,15 +1,20 @@
 // 1. Verificación inmediata de seguridad
 const token = localStorage.getItem('token');
+const API_BASE_URL = 'https://avance-proyecto-tam.onrender.com/api/movimientos'; // <--- AQUÍ VA
 let editandoID = null; 
 
 if (!token) {
-    window.location.href = 'index.html';
+    window.location.href = 'index.html'; // Corregido para que te mande al login
+} 
+
+if (!token) {
+    window.location.href = './dashboard.html';
 }
 
 // 2. Función para cargar los movimientos desde la API
 async function cargarMovimientos() {
     try {
-        const res = await fetch('/api/movimientos', {
+        const res = await fetch(API_BASE_URL, {
             method: 'GET',
             headers: { 
                 'Authorization': `Bearer ${token}`,
@@ -64,7 +69,7 @@ async function borrarRegistro(id) {
     if (confirm("¿Estás segura de eliminar este registro de la logística de Tamsa?")) {
         try {
             // Se asegura que la URL sea absoluta desde la raíz
-            const res = await fetch(`/api/movimientos/${id}`, {
+            const res = await fetch(`${API_BASE_URL}/${id}`, {
                 method: 'DELETE',
                 headers: { 
                     'Authorization': `Bearer ${token}`,
@@ -112,7 +117,7 @@ document.getElementById('movimientoForm').addEventListener('submit', async (e) =
     };
 
     const metodo = editandoID ? 'PUT' : 'POST';
-    const url = editandoID ? `/api/movimientos/${editandoID}` : '/api/movimientos';
+    const url = editandoID ? `${API_BASE_URL}/${editandoID}` : API_BASE_URL;
 
     try {
         const res = await fetch(url, {
