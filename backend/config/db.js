@@ -12,7 +12,11 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,     // El nombre: tamsa_logistica
     waitForConnections: true,
     connectionLimit: 10,               // Máximo 10 conexiones simultáneas
-    queueLimit: 0
+    queueLimit: 0,
+    ssl: {
+        minVersion: 'TLSv1.2',
+        rejectUnauthorized: true
+    }
 });
 
 // Exportamos el pool usando ".promise()" para poder usar async/await en los controladores,
