@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', async (e) => {
 
     try {
         // CAMBIO: Usamos ruta relativa /api/auth/login
-        const respuesta = await fetch('/api/auth/login', {
+        const respuesta = aawait fetch('https://avance-proyecto-tam.onrender.com/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
