@@ -4,7 +4,7 @@ const API_BASE_URL = 'https://avance-proyecto-tam.onrender.com/api/movimientos';
 let editandoID = null; 
 
 if (!token) {
-    window.location.href = 'index.html'; // Corregido para que te mande al login
+    //window.location.href = 'index.html'; // Corregido para que te mande al login
 } 
 
 if (!token) {
